@@ -1,0 +1,44 @@
+
+<ion-menu side="start" menuId="menu" contentId="main">
+  <ion-header>
+    <ion-toolbar translucent>
+      <ion-title>Menú</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item (click)='cerrarSesion()'>
+        <ion-icon name="log-out"></ion-icon>
+        <ion-label>Cerrar sesión</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-icon name="library-outline"></ion-icon>  Libros en posesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content id='main'>
+  <ion-list>
+    <ion-item *ngFor="let libro of libros">
+      <ion-label>
+        <ion-text >
+          <h1>{{libro.titulo}}</h1>
+        </ion-text>
+        <ion-text>
+          <h2>{{libro.autor}}</h2>
+        </ion-text>
+        <ion-text>
+          <p>{{libro.descripcion}}</p>
+        </ion-text>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
